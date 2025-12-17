@@ -31,6 +31,8 @@
   text-transform: uppercase;
   text-align: center;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   gap: 20px;
 }
@@ -60,6 +62,9 @@
   font-size: 18px;
   border: 2px solid black;
   font-variation-settings: 'wght' var(--main-font-weight, 400);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card__title {
