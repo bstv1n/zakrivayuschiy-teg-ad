@@ -12,9 +12,6 @@
 
 /* Основные стили страницы */
 .page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font, sans-serif);
