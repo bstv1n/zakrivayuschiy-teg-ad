@@ -1,11 +1,114 @@
-/* Опишите в этом файле все keyframes для проекта и стили анимаций иконки Like.
+.core {
+  fill: transparent;
+  transition: fill 0.3s 0s linear;
+}
 
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
+.main-body {
+  fill: transparent;
+  transition: fill 0.3s 0.03s linear;
+}
 
-*/
+.contour {
+  fill: var(--heart-contour-color, #000);
+  transition: fill 0.1s linear;
+}
+
+.sparks {
+  fill: var(--heart-core-color);
+  opacity: 0;
+}
+
+.heart:hover .core {
+  fill: var(--heart-contour-color);
+  transition-delay: 0.03s;
+}
+
+.heart:hover .main-body {
+  fill: var(--heart-contour-color);
+  transition-delay: 0.06s;
+}
+
+.heart:not(:hover) .core {
+  fill: transparent;
+  transition-delay: 0s;
+}
+
+.heart:not(:hover) .main-body {
+  fill: transparent;
+  transition-delay: 0.03s;
+}
+
+.heart:active .core {
+  fill: var(--heart-core-color);
+  transition-delay: 0s;
+}
+
+.heart:active .main-body {
+  fill: var(--heart-core-color);
+  transition-delay: 0.03s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--heart-core-color);
+  transition: fill 0.3s 0s linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--heart-core-color);
+  transition: fill 0.3s 0.03s linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--heart-core-color);
+  transition: fill 0.3s 0.06s linear;
+}
+
+.like-icon.is-liked {
+  animation: scaleHeart 0.3s ease-in 0.1s;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparksAppear 0.3s ease-in 0.3s;
+}
+
+@keyframes scaleHeart {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes sparksAppear {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.button__form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: black;
+  transition: left 0.5s ease-in-out;
+}
+
+.button__form:hover::before {
+  left: 0;
+}
+
+.button__form:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0 1px black;
+  transition: box-shadow 0.3s ease;
+}
