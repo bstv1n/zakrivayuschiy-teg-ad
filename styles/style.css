@@ -13,7 +13,7 @@
 /* Основные стили страницы */
 .page {
   min-inline-size: 320px;
-  min-block-size: 100dvb;
+  min-block-size: 100vh;
   font-family: var(--main-font, sans-serif);
   font-variation-settings: 'wght' var(--main-font-weight, 400);
   background-image: var(--background-gradient);
