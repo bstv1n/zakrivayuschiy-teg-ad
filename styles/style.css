@@ -13,7 +13,7 @@
 /* Основные стили страницы */
 .page {
   min-inline-size: 320px;
-  min-block-size: 100vh;
+  min-block-size: 100dvb;
   font-family: var(--main-font, sans-serif);
   font-variation-settings: 'wght' var(--main-font-weight, 400);
   background-image: var(--background-gradient);
@@ -53,6 +53,8 @@
   padding-bottom: 103px;
   background-color: inherit;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   gap: 50px;
 }
@@ -62,9 +64,6 @@
   font-size: 18px;
   border: 2px solid black;
   font-variation-settings: 'wght' var(--main-font-weight, 400);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .card__title {
